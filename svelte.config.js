@@ -15,10 +15,10 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
 			fallback: '404.html',
-			paths: {
-				base:  dev ? '' : '/aptos-landing-interface'
-			}
-		})
+		}),
+		paths: {
+			base:  dev ? '' : '/aptos-landing-interface'
+		}
 	}
 };
 
