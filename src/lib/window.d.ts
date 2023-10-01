@@ -1,26 +1,24 @@
 declare interface Window {
-	aptos?: PetraWallet;
+	aptos?: PetraWallet
 }
 
 
 
 interface PetraWallet {
-	account: () => Promise<{ address?: string }>;
+	account: () => Promise<{ address?: string }>
 
-	connect: () => Promise<{ address?: string }>;
+	connect: () => Promise<{ address?: string }>
 
-	disconnect: () => Promise<void>;
+	disconnect: () => Promise<void>
 	
-	network: () => Promise<'Devnet' | 'AnythingOther'>;
+	network: () => Promise<'Devnet' | 'AnythingOther'>
 	
-	onAccountChange: (callback: (account: { address?: string }) => void) => void;
-	
-	onNetworkChange: (callback: (network: 'Devnet' | 'AnythingOther') => void) => void;
+	onAccountChange: (callback: (account: { address?: string }) => void) => void
 	
 	signAndSubmitTransaction: (tx: {
-		arguments: Array<string>;
-		function: string;
-		type: 'entry_function_payload';
-		type_arguments: Array<string>;
-	}) => Promise<{ hash: string }>;
+		arguments: Array<string>
+		function: string
+		type: 'entry_function_payload'
+		type_arguments: Array<string>
+	}) => Promise<{ hash: string }>
 }
